@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+//import './App.css';
+import HomePage from "./components/homePage/";
+import PageOne from "./components/pages/";
+import {useState} from "react";
 
 function App() {
+  const [showCover,setShowCover]=useState(true);
+  //Ocultar Portada
+  const ocultarPortada=()=>{
+    setShowCover(false);
+  }
+  //Mostrar Portada
+  const mostrarPortada=()=>{
+    setShowCover(true);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {showCover===true ? <HomePage ocultarPortada={ocultarPortada}/> : <PageOne mostrarPortada={mostrarPortada}/>}
+    </>
   );
 }
 
