@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-//import './App.css';
+import './App.css';
 import HomePage from "./components/homePage/";
 import PageOne from "./components/pages/";
 import {useState} from "react";

@@ -26,6 +26,7 @@ const NewButton=styled(Button)`
 const NewH1=styled.h1`
     background-color: #CCFFCC;
     color: #0033CC;
+    text-align:justify;
     font-size: 50px;
     font-family: 'Zen Tokyo Zoo', cursive;
     opacity: 0.8;

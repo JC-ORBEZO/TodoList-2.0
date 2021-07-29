@@ -1,6 +1,7 @@
 import styled from "styled-components"; 
 import {Container,Row,Col,Button} from "react-bootstrap";
 import TasksForm from "./tasksForm";
+import TasksList from "./tasksList";
 import { useState } from "react";
 //styled component en Div
 const NewHomePage=styled.div`
@@ -15,6 +16,23 @@ const NewHomePage=styled.div`
     justify-content:center;
     align-items: center;
 */
+//styled de Header
+const NewH1=styled.h1`
+    background-color: blue;
+    color: white;
+    font-size: 50px;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    opacity: 0.3;
+    display:flex;
+    justify-content:center;
+`;
+
+const Header=()=>{
+    return(
+        <NewH1>TODO LIST</NewH1>
+    );
+}
+
 //styled component en Buttond de React-Bootstrap
 const NewButton=styled(Button)`    
     width: 240px;
@@ -23,6 +41,23 @@ const NewButton=styled(Button)`
     font-family: 'Zen Tokyo Zoo', cursive;
     opacity: 0.8;
 `;
+
+//styled component en Container de React-Bootstrap
+const NewContainer=styled(Container)`
+    height:100%;
+`;
+
+//styled component en Row de React-Bootstrap
+const NewRow=styled(Row)`
+    justify-content:center;  
+    align-items:center;
+`;
+
+//styled component en Col de React-Bootstrap
+const NewCol=styled(Col)`
+    align-items:center;
+`;
+
 const PageOne = ({mostrarPortada}) => {
     const [tasks,setTasks]=useState([]);
     //Agregar nueva tarea
@@ -31,13 +66,18 @@ const PageOne = ({mostrarPortada}) => {
     }
     return ( 
         <NewHomePage>
-            <Container>
-                <Row>
-                    <Col md={6} xs={12}><TasksForm tasks={tasks} addTasks={addTasks} setTasks={setTasks}/></Col>
-                    <Col md={6} xs={12}></Col>
-                </Row>
-            </Container>
-            {/*<NewButton onClick={()=>mostrarPortada()}>VOLVER</NewButton>*/}
+            <NewContainer>
+            {/*<Header/>*/}
+                <NewRow>
+                    <NewCol md={4} xs={12}>
+                        <NewButton onClick={()=>mostrarPortada()}>VOLVER</NewButton>
+                        <TasksForm tasks={tasks} addTasks={addTasks} setTasks={setTasks}/>
+                        
+                    </NewCol>
+                    <NewCol md={8} xs={12}><TasksList/></NewCol>
+                </NewRow>
+            </NewContainer>
+            
         </NewHomePage>
      );
 }
