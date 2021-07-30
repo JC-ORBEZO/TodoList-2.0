@@ -74,7 +74,7 @@ const PageOne = ({mostrarPortada}) => {
                         <TasksForm tasks={tasks} addTasks={addTasks} setTasks={setTasks}/>
                         
                     </NewCol>
-                    <NewCol md={8} xs={12}><TasksList/></NewCol>
+                    <NewCol md={8} xs={12}><TasksList tasks={tasks}/></NewCol>
                 </NewRow>
             </NewContainer>
             
