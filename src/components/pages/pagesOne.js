@@ -60,9 +60,15 @@ const NewCol=styled(Col)`
 
 const PageOne = ({mostrarPortada}) => {
     const [tasks,setTasks]=useState([]);
+    const [showModal,setShowModal]=useState(false);
     //Agregar nueva tarea
     const addTasks=(task)=>{
         setTasks([...tasks,task]);
+    }
+    //Para evento eliminar una tarea
+    const deleteTask=(id)=>{
+        const filtro=tasks.filter(task=>task.id!==id);
+        setTasks(filtro);
     }
     return ( 
         <NewHomePage>
@@ -74,7 +80,9 @@ const PageOne = ({mostrarPortada}) => {
                         <TasksForm tasks={tasks} addTasks={addTasks} setTasks={setTasks}/>
                         
                     </NewCol>
-                    <NewCol md={8} xs={12}><TasksList tasks={tasks}/></NewCol>
+                    <NewCol md={8} xs={12}>
+                        <TasksList tasks={tasks} setTasks={setTasks} addTasks={addTasks} deleteTask={deleteTask} setShowModal={setShowModal}/>
+                    </NewCol>
                 </NewRow>
             </NewContainer>
             

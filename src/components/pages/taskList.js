@@ -8,7 +8,7 @@ const DivTaskList=styled.div`
     padding:5px;
 `;
 
-const TaskList = ({task}) => {
+const TaskList = ({task,tasks,setTasks,deleteTask,setShowModal}) => {
     /*
         https://todolistvrs2.netlify.app/
         https://github.com/gustindvr/pending-tasks
@@ -18,8 +18,8 @@ const TaskList = ({task}) => {
         <DivTaskList key={task.id}>
             <h5>{task.title}</h5>
             <p>{task.description}</p>
-            <Button variant="danger">Eliminar</Button>{' '}            
-            <Button variant="warning">Modificar</Button>{' '}
+            <Button variant="danger" onClick={()=>deleteTask(task.id)}>Eliminar</Button>{' '}            
+            <Button variant="warning" onClick={()=>setShowModal(true)}>Modificar</Button>{' '}
         </DivTaskList> 
     );
 }
