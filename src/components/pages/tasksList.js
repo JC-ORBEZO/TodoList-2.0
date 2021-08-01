@@ -9,10 +9,10 @@ const DivTasksList=styled.div`
     margin-top:10px;
     padding:15px;
     `;
-const TasksList = ({tasks,setTasks, addTasks,deleteTask,setShowModal}) => {
+const TasksList = ({task,setTask,tasks,setTasks, addTasks,deleteTask,setShowModal}) => {
     return ( 
     <DivTasksList>
-        {tasks.map(task=><TaskList key={task.id} task={task} tasks={tasks} setTasks={setTasks} addTasks={addTasks} deleteTask={deleteTask} setShowModal={setShowModal}/>)}
+        {tasks.map(task=><TaskList key={task.id} task={task} tasks={tasks} setTasks={setTasks} addTasks={addTasks} deleteTask={deleteTask} setShowModal={setShowModal} setTask={setTask}/>)}
     </DivTasksList>
     );
 }
