@@ -5,7 +5,7 @@ import styled from "styled-components";
 const NewForm=styled(Form)`
     background-image:url("https://media.istockphoto.com/illustrations/gold-wallpaper-with-damask-pattern-illustration-id1044886574?k=6&m=1044886574&s=612x612&w=0&h=ywOlaHUpXq0h5bpXvvC0g46ebdvtpHuTqKeGaC22iUk=");
     padding:5px;
-    height:350px;
+    min-height:350px;
     font-family:fantasy;
     border:2px solid black;
     border-radius:10px;

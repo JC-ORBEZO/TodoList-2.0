@@ -10,7 +10,8 @@ const NewHomePage=styled.div`
     background-size:contain;
     margin: auto;
     width:100%;
-    height:720px;    
+    min-height:720px;
+    height:auto;
     `;
 /*
     display:flex;
@@ -53,6 +54,7 @@ const NewContainer=styled(Container)`
 const NewRow=styled(Row)`
     justify-content:center;  
     align-items:center;
+    flex-wrap:wrap;
 `;
 
 //styled component en Col de React-Bootstrap
@@ -67,6 +69,7 @@ const PageOne = ({mostrarPortada}) => {
     //Agregar nueva tarea
     const addTasks=(task)=>{
         setTasks([...tasks,task]);
+        localStorage.setItem("tasks", JSON.stringify([...tasks,task]));
     }
     //Para evento eliminar una tarea
     const deleteTask=(id)=>{
